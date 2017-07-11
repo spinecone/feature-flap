@@ -1,0 +1,9 @@
+<h3>We are flappin' some features</h3>
+
+<% if Flipper::Rails.flipper[:parrots].enabled? %>
+  <% 5.times do %>
+    <img src="http://cultofthepartyparrot.com/parrots/tripletsparrot.gif">
+  <% end %>
+<% else %>
+  nothing to see here...
+<% end %>

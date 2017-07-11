@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170711214847) do
+ActiveRecord::Schema.define(version: 20170711221903) do
 
   create_table "flipper_features", force: :cascade do |t|
     t.string   "key",        null: false
@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(version: 20170711214847) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["feature_key", "key", "value"], name: "index_flipper_gates_on_feature_key_and_key_and_value", unique: true
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name",                        null: false
+    t.string   "login",                       null: false
+    t.string   "email",                       null: false
+    t.string   "github_authentication_token", null: false
+    t.integer  "github_id",                   null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
 end
