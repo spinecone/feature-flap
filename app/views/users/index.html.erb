@@ -1,3 +1,11 @@
+<% if current_user %>
+  <a href="/logout">Log out</a>
+<% else %>
+  <a href="/auth/githubber">Login</a>
+<% end %>
+
+<br>
+
 <h3>We are flappin' some features</h3>
 
 <% if Flipper::Rails.flipper[:parrots].enabled? %>

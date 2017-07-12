@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   mount Flipper::UI.app(->() { Flipper::Rails.flipper }) => '/flipper'
 
   root to: 'users#index'
+
+  get '/logout'                  => 'sessions#logout',  :as => "logout"
+  get '/auth/github/callback' => 'sessions#create',  :as => "oauth_callback"
 end
