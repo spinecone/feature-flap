@@ -13,4 +13,8 @@ module ApplicationHelper
   def feature_enabled?(feature)
     Flipper::Rails.flipper[feature.to_sym].enabled? current_user
   end
+
+  def is_admin?
+    current_user && current_user.admin?
+  end
 end
