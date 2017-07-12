@@ -8,12 +8,11 @@
 
 <h3>We are flappin' some features</h3>
 
-<% if Flipper::Rails.flipper[:parrots].state == :off  %>
-  <% Flipper::Rails.flipper[:parrots].enable_group(:admins) %>
-<% end %>
-<% if Flipper::Rails.flipper[:parrots].enabled? current_user %>
-  <% 5.times do %>
-    <img src="http://cultofthepartyparrot.com/parrots/tripletsparrot.gif">
+<% if feature_enabled? :parrots %>
+  <%= feature_flag :parrots do %>
+    <% 5.times do %>
+      <img src="http://cultofthepartyparrot.com/parrots/tripletsparrot.gif">
+    <% end %>
   <% end %>
 <% else %>
   nothing to see here...
