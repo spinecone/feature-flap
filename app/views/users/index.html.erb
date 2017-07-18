@@ -1,11 +1,4 @@
-<% if current_user %>
-  <a href="/admin/flipper">Flipper config</a> |
-  <a href="/logout">Log out</a>
-<% else %>
-  <a href="/auth/githubber">Login</a>
-<% end %>
-
-<br>
+<%= render 'login' %>
 
 <h3>We are flappin' some features</h3>
 
